@@ -1,0 +1,70 @@
+post http://localhost:3000/api/v1.0/moviebooking/user
+Content-Type: application/json
+
+{
+    "firstName":"Bhavya",
+    "lastName":"Durgam",
+    "password":"bhavya",
+    "email":"chinnu@email.com",
+    "loginId":"bhavya244",
+    "confirmPwd":"bhavya",
+    "contactNum":9437567890,
+    "role":"admin"
+}
+
+### user login
+post http://localhost:3000/api/v1.0/moviebooking/user-login
+Content-Type: application/json
+
+{
+    "email":"Reyansh@email.com",
+    "password":"ricky",
+    "role":"admin"
+}
+
+### reset pwd
+post http://localhost:3000/user-api/sanjana11/forgot
+Content-Type: application/json
+
+{
+    "password":"sanju",
+    "confirmPwd":"sanju"
+}
+
+### addMovie
+post http://localhost:3000/api/v1.0/moviebooking/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlJleWFuc2hAZW1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI1MjU5NTI1LCJleHAiOjE3MjUyNTk1NzV9.pRqEetsXb1E1_lRmqxDzzsglUMeVdaesLEkLrJXzTPU
+
+{
+    "movieName":"Rayan",
+    "theatreName":"IMAX Theatre",
+    "totalSeats":"25"
+}
+
+### getMovies
+
+get http://localhost:3000/api/v1.0/moviebooking/all
+
+###getMovies
+
+get http://localhost:3000/api/v1.0/moviebooking/movies/search/ra
+
+### book Ticket
+
+post http://localhost:3000/api/v1.0/moviebooking/Kalki/add
+Content-Type: application/json
+
+{
+    "theatreName":"Lakshmi Theatre",
+    "numberOfTickets":"2",
+    "seatNumbers":"B1,B2"
+}
+
+###
+put http://localhost:3000/api/v1.0/moviebooking/Kalki/update/5
+
+###
+delete http://localhost:3000/api/v1.0/moviebooking/Rayan/delete/66d3ddda576b3cadd0311aa7
+
+
