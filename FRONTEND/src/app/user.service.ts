@@ -3,6 +3,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './model/User';
 import { HttpClient } from '@angular/common/http';
 import { Admin } from './model/Admin';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MovieService } from './movie.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +24,7 @@ export class UserService {
   getUserLoginStatus() {
     return this.userLoginStatus.asObservable()
   }
+  
 
   currentUser = new BehaviorSubject<User>({
     firstName: ' ',
