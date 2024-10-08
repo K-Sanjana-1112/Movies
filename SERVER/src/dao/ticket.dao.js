@@ -3,6 +3,7 @@ const Movie = require('../Model/movieModel')
 const mongoose = require('mongoose')
 
 const bookTicket = async (data) => {
+    console.log(data)
    
     let movie = await Movie.findOne({ movieName: data.movieName, theatreName: data.theatreName })
     if (!movie) {

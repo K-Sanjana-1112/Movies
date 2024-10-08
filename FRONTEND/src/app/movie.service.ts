@@ -8,6 +8,10 @@ import { Observable } from 'rxjs';
 export class MovieService {
 
   httpClient = inject(HttpClient);
+  bookingData: any;
+  setBookingData(data: any) {
+    this.bookingData = data;
+  }
 
   createMovie(movieObj):Observable<any>{
     let token=localStorage.getItem('token') 

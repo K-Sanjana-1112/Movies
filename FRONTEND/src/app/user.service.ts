@@ -27,6 +27,11 @@ export class UserService {
     confirmPwd: ' ',
     contactNum: ' ',
   })
+
+  getUserEmail(): string {
+    const email = localStorage.getItem('email');
+    return email !== null ? email : '';
+  }
   setCurrentUser(user: User) {
     this.currentUser.next(user)
   }

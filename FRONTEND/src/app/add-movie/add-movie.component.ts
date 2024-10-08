@@ -150,7 +150,7 @@ update():void{
     this.movieService.deleteMovie(movieName).subscribe(
       (res)=>{ 
          console.log('res',res)
-        this.movies
+        this.movieService.getMovies()
       }
       )
 

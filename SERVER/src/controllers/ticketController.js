@@ -7,7 +7,9 @@ const bookTicket = async (req, res) => {
         let { movieName,theatreName, numberOfTickets, seatNumbers } = req.body;
        
         let data = { movieName, theatreName, numberOfTickets, seatNumbers }
+        
         const bookTicket = await ticketService.bookTicket(data);
+        console.log(bookTicket)
         
         let ticket = bookTicket.ticket
         if(bookTicket.message && bookTicket.message.includes('Only')){
