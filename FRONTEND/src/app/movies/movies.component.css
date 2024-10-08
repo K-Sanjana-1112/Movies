@@ -1,0 +1,68 @@
+/* General Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.fluid-container {
+    padding: 2rem 1rem; /* Padding around the container */
+}
+
+/* Card Styles */
+.card {
+    background-color: #1e1e1e; /* Card background */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 8px; /* Rounded corners for images */
+    border-top-right-radius: 8px; /* Rounded corners for images */
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px; /* Rounded button edges */
+    width: 100%; /* Full-width buttons */
+}
+
+.btn-outline-dark {
+    border: 2px solid #ffffff; /* Dark border for outline button */
+}
+
+/* Table Styles */
+.table {
+    background-color: #1e1e1e; /* Table background */
+    color: #ffffff; /* Text color */
+}
+
+.table th,
+.table td {
+    border: none; /* Remove table borders */
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #1e1e1e; /* Modal background */
+    color: #ffffff; /* Text color */
+}
+
+.modal-header {
+    border-bottom: 1px solid #ffffff; /* Light border for header */
+}
+
+.modal-footer {
+    border-top: 1px solid #ffffff; /* Light border for footer */
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 1rem; /* Space between cards on smaller screens */
+    }
+}

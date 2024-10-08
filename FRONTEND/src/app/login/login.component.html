@@ -1,41 +1,43 @@
 <div class="fluid-container">
-    <p class="display-1 text-center text-white" style="font-weight: 400;" >LOGIN</p>
+    <h1 class="display-1 text-center text-white mb-4" style="font-weight: 400;">LOGIN</h1>
   
-      @if(userCredentialsError.userCredErrStatus){
-        <p class="text-danger fs-3 text-center">{{userCredentialsError.userCredErrMsg}}</p>
-      }
+    <div *ngIf="userCredentialsError.userCredErrStatus" class="text-danger fs-3 text-center mb-3">
+        {{userCredentialsError.userCredErrMsg}}
+    </div>
   
     <form class="w-50 mx-auto mt-3" [formGroup]="userCredentials" (ngSubmit)="onSubmitUser()" #ref="ngForm">
   
-      <div class="mb-2">
-        <input type="radio" formControlName="loginType" id="user" value="user">
-        <label for="user" class="text-info mb-2">User</label>
-    
-        <input type="radio" formControlName="loginType" id="admin" value="admin">
-        <label for="admin" class="text-info">Admin</label>
-      </div>
-    
-  
-      <div class="mb-2">
-        <label for="email" class="form-label h5 text-white">Email</label>
-        <input type="text" formControlName="email" id="email" class="form-control">
-        <div *ngIf="email?.invalid &&(email?.dirty||email?.touched||ref.submitted)">
-          <p *ngIf="email?.errors?.['required']" class="text-warning">email is required</p>
-          <p *ngIf="email?.errors?.['minlength']" class="text-warning">MinLength is 4</p>
-          <p *ngIf="email?.errors?.['maxlength']" class="text-warning">MaxLength is 6</p>
+        <div class="mb-3">
+            <div class="form-check form-check-inline">
+                <input type="radio" formControlName="loginType" id="user" value="user" class="form-check-input">
+                <label for="user" class="form-check-label text-info">User</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" formControlName="loginType" id="admin" value="admin" class="form-check-input">
+                <label for="admin" class="form-check-label text-info">Admin</label>
+            </div>
         </div>
-      </div>
+    
+        <div class="mb-3">
+            <label for="email" class="form-label h5 text-white">Email</label>
+            <input type="text" formControlName="email" id="email" class="form-control">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched || ref.submitted)">
+                <p *ngIf="email?.errors?.['required']" class="text-warning">Email is required</p>
+                <p *ngIf="email?.errors?.['minlength']" class="text-warning">MinLength is 4</p>
+                <p *ngIf="email?.errors?.['maxlength']" class="text-warning">MaxLength is 6</p>
+            </div>
+        </div>
       
-      <div class="mb-2">
-        <label for="password" class="form-label h5 text-white">Password</label>
-        <input type="password" formControlName="password" id="password" class="form-control">
-        <div *ngIf="password?.invalid &&(password?.dirty||password?.touched||ref.submitted)">
-          <p *ngIf="password?.errors?.['required']" class="text-warning">Password is required</p>
+        <div class="mb-3">
+            <label for="password" class="form-label h5 text-white">Password</label>
+            <input type="password" formControlName="password" id="password" class="form-control">
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched || ref.submitted)">
+                <p *ngIf="password?.errors?.['required']" class="text-warning">Password is required</p>
+            </div>
         </div>
-      </div>
   
-      <button class="btn btn-success d-block mx-auto">Login</button>
-      <p class=" back text-center text-light h6">Don't have an account?<a routerLink="/register">Register</a></p>
-  
+        <button type="submit" class="btn btn-success d-block mx-auto">Login</button>
+        
+        <p class="back text-center text-light h6 mt-3">Don't have an account? <a routerLink="/register" class="text-info">Register</a></p>
     </form>
-  </div>
+</div>

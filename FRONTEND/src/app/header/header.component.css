@@ -1,0 +1,28 @@
+.nav {
+    padding: 10px 20px;
+}
+
+.nav-item {
+    margin-left: 15px;
+}
+
+.nav-link {
+    color: #ffffff; /* Light text color */
+    font-weight: 500; /* Slightly bolder text */
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc107; /* Change to a gold color on hover */
+}
+
+.Active {
+    font-weight: bold;
+    text-decoration: underline; /* Underline active link */
+}
+
+/* Optional: add a subtle shadow for depth */
+.bg-dark {
+    background-color: #060254 !important; /* Ensure dark background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
