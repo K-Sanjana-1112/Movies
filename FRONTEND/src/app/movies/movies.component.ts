@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Movie } from '../model/movie';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -10,14 +11,17 @@ import { Movie } from '../model/movie';
 export class MoviesComponent {
   movieService=inject(MovieService)
   movies:Movie[]=[];
-  movieCounts: any[];
-  theatreName:[];
+  
+ 
+  router=inject(Router)
+ 
 
   ngOnInit(): void {
  
     this.movieService.getMovies().subscribe({
      next:(res)=>{
       this.movies=res.getMovies.movies
+      
     
       // this.movieCounts = new Array(this.movies.length).fill(0);
      }
@@ -27,5 +31,13 @@ export class MoviesComponent {
        
     
   }
+
+  bookTicket(name){
+    let moviename=encodeURIComponent(name)
+    this.router.navigate([`/bookTicket/${moviename}`]);
+    
+  }
+
+  
 
 }

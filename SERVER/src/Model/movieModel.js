@@ -11,7 +11,7 @@ const movieSchema=new mongoose.Schema({
         required:true
     },
     theatreName:{
-        type:[String]
+        type:String
     },
     totalSeats:{
         type:Number,
@@ -19,6 +19,10 @@ const movieSchema=new mongoose.Schema({
     },
     availableTickets:{
         type:Number,
+    },
+    price:{
+        type:Number
+
     },
     status:{
         type:String,

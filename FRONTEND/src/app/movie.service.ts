@@ -18,4 +18,18 @@ export class MovieService {
   getMovies(): Observable<any> {
     return this.httpClient.get<any>(`http://localhost:3000/api/v1.0/moviebooking/all`)
   }
+  
+
+  bookTickets(data): Observable<any> {
+    
+    return this.httpClient.post<any>(`http://localhost:3000/api/v1.0/moviebooking/bookTicket`,data)
+  }
+
+  displayMovieById(moviename){
+    let token=localStorage.getItem('token') 
+    const headers = {'Authorization':`Bearer ${token}`}
+    return this.httpClient.get<any>(`http://localhost:3000/api/v1.0/moviebooking/movies/search/${moviename}`,{headers:new HttpHeaders(headers)})
+
+  }
+
 }

@@ -3,15 +3,17 @@ const Movie=require('../Model/movieModel')
 
 const addMovie = async (req, res) => {
     try {
-        let {image,movieName,theatreName,totalSeats,status}= req.body;
+        let {image,movieName,theatreName,totalSeats,price,status}= req.body;
         let data={
             image:image,
             movieName:movieName,
             theatreName:theatreName,
             totalSeats:totalSeats,
             availableTickets:totalSeats,
+            price:price,
             status:status
         }
+        
         
         // if (!movieName || !theatreName) {
         //     return res.status(400).send({ error: 'All fields are required!' });

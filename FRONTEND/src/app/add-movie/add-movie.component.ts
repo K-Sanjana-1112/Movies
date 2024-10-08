@@ -17,6 +17,7 @@ export class AddMovieComponent {
  toast=inject(NgToastService)
   displayUserStatus: boolean;
   user: string;
+  name: string;
   
   
 
@@ -33,6 +34,7 @@ export class AddMovieComponent {
      movieName:new FormControl('',[Validators.required]),
      theatreName:new FormControl('',[Validators.required]),
      totalSeats:new FormControl('',[Validators.required]),
+     price:new FormControl('',[Validators.required]),
      status:new FormControl('',[Validators.required])
     });
     
@@ -52,16 +54,16 @@ export class AddMovieComponent {
     return this.movie.get('totalSeats')
 
   }
+  get price(){
+    return this.movie.get('price')
+  }
   get status(){
     return this.movie.get('status')
   }
 
-  // onChange(file:File){
-  //   if(file){
-  //     this.fileName=file.name;
-  //     this.file=file
-  //   }
-  // }
+  getTitle(movieName:string){
+    this.name=movieName
+    }
 
  
 
@@ -71,13 +73,13 @@ export class AddMovieComponent {
 
         // movie Object from NgForm Obj
       let  movieObj=this.movie.value
-      let theatres=movieObj.theatreName.split(',').map(name=>name.trim());
-      console.log(theatres)
+      
       let data={
         image:movieObj.image,
         movieName:movieObj.movieName,
-        theatreName:theatres,
+        theatreName:movieObj.theatreName,
         totalSeats:movieObj.totalSeats,
+        price:movieObj.price,
         status:movieObj.status
 
 

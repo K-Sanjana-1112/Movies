@@ -1,0 +1,63 @@
+.modal {
+
+     background-color: #fefefe;
+
+
+    padding: 2px;
+
+   
+    width: 500px;
+    height: 500px;
+
+    margin-left: 200px;
+    position: relative;
+
+  }
+
+  .modal-content {
+
+    background-color: #fefefe;
+
+
+    padding: 10px;
+
+    border: 10px solid #03705e67;
+   
+    width: 500px;
+    height: 500px;
+
+   
+    position: absolute;
+
+  }
+
+  .close {
+
+    color: #aaaaaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    float: left;  
+    font-size: 28px;
+   
+    font-weight: bold;
+
+  }
+
+  .close:hover,
+
+  .close:focus {
+
+    color: black;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+  }
+
+  .show-modal {
+
+    display: block;
+
+  }

@@ -7,7 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -27,6 +27,7 @@ import { NgToastModule } from 'ng-angular-popup';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     NgToastModule
   
   ],

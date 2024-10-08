@@ -46,7 +46,7 @@ export class LoginComponent {
             console.log(res.newUser.userfromdb,'user')
             this.userService.setLoginType(formData.loginType);
 
-            this.router.navigate([`/bookTicket`]);
+            this.router.navigate([`/movies`]);
           }
           else {
             this.userCredentialsError = {

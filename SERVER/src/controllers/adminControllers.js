@@ -5,7 +5,7 @@ const Admin=require('../Model/adminModel')
 const createAdmin = async (req, res) => {
     try {
       let data=req.body;
-      console.log(data)
+    
       
       if ( !data.lastName || !data.email  || !data.password   || !data.confirmPwd ) {
         return res.status(400).send({ error: 'All fields are required!' });

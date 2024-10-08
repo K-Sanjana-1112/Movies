@@ -2,9 +2,9 @@ export class Movie {
     constructor(
         public image: string,
         public movieName: string,
-        public theatreName: Theatre[],
+        public theatreName: string,
         public totalSeats: Number,
-        public availabletickets: Number,
+        public availableTickets: Number,
         public price:Number,
         public status:string
     ) {}
@@ -12,6 +12,4 @@ export class Movie {
 
 
 
-  export interface Theatre {
-   screen:string[]
-  }
+ 

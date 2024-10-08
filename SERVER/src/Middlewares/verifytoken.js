@@ -11,7 +11,7 @@ function verifyToken(req,res,next){
         let decodedtoken=jwt.verify(token,process.env.SECRET_KEY)
         next()
     }else{
-        console.log(req.headers.authorization)
+       
         res.send({message:"Unauthorized access"})
     }
     

@@ -24,12 +24,14 @@ const routes: Routes = [
     component:AddMovieComponent
   },
   {
-    path:'bookTicket',
+    path:'bookTicket/:moviename',
     component:BookTicketComponent
   },
   {
     path:'',
-    component:MoviesComponent
+    redirectTo:'movies',
+    pathMatch:'full'
+
   }
 ];
 
