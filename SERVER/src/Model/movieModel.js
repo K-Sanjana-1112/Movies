@@ -19,6 +19,8 @@ const movieSchema=new mongoose.Schema({
     },
     availableTickets:{
         type:Number,
+        minimum:0
+        
     },
     price:{
         type:Number

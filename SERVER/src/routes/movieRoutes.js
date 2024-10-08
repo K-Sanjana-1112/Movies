@@ -11,9 +11,9 @@ movieApp.get('/all',getMovies);
 
 movieApp.get('/movies/search/:moviename',verifyToken,searchMovie);
 
-movieApp.put('/:moviename/update/:ticket', verifyToken,updateTicketStatus)
+movieApp.post('/update/:movieName',updateTicketStatus)
 
-movieApp.delete('/:moviename/delete/:id',verifyToken,deleteMovie)
+movieApp.delete('/:moviename/delete/',verifyToken,deleteMovie)
 
 
 module.exports=movieApp

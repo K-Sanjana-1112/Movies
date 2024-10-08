@@ -18,6 +18,9 @@ export class AddMovieComponent {
   displayUserStatus: boolean;
   user: string;
   name: string;
+  login: string;
+  movies: any;
+  bookedTickets:number;
   
   
 
@@ -26,6 +29,23 @@ export class AddMovieComponent {
       (data) => {
         this.user = data.lastName;
       })
+      console.log(this.user)
+
+      this.userService.getLoginType().subscribe(
+        (data) => {
+          this.login = data;
+          console.log(data)
+        })
+
+        this.movieService.getMovies().subscribe({
+          next:(res)=>{
+           this.movies=res.getMovies.movies
+           console.log(this.movies)
+           this.name=this.movies[0].movieName
+           
+          }
+          })     
+       
 
     
    this.movie=new FormGroup({
@@ -61,9 +81,7 @@ export class AddMovieComponent {
     return this.movie.get('status')
   }
 
-  getTitle(movieName:string){
-    this.name=movieName
-    }
+ 
 
  
 
@@ -113,6 +131,30 @@ onReset(){
   this.movie.markAsUntouched
 
 }
+
+update():void{
+   this.movieService.updateStatus(this.name,this.bookedTickets).subscribe(
+      (res)=>{ 
+        if(res.message==='SOLD OUT'){ console.log('soldout')}
+        else{ console.log('BOOK ASAP')}
+    
+      },
+      (err)=>{
+        console.log("Error in Updating...",err)
+      }
+    
+    )
+  }
+
+  deleteMovie(movieName){
+    this.movieService.deleteMovie(movieName).subscribe(
+      (res)=>{ 
+         console.log('res',res)
+        this.movies
+      }
+      )
+
+  }
 
 }
 

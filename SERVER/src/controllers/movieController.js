@@ -55,17 +55,19 @@ const searchMovie=async(req,res)=>{
 }
 
 const updateTicketStatus = async (req, res) => {
-    let moviename = req.params.moviename
-    let tickets=req.params.ticket;
-    let data={moviename,tickets}
+    console.log(req.body,'req'
+    )
+    let tickets=parseInt(req.body.tickets)
+    let movieName = req.params.movieName
+    
+    let data={movieName,tickets}
     let updateStatus = await movieService.updateTicketStatus(data);
     res.send({ message:updateStatus.message,updateStatus})
 }
 
 const deleteMovie=async(req,res)=>{
     let moviename=req.params.moviename
-    let id=req.params.id
-    let data={moviename,id}
+    let data={moviename}
     let deleteMovie=await movieService.deleteMovie(data)
     res.send({message:deleteMovie.message})
 

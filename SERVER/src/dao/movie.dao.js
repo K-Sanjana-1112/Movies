@@ -32,19 +32,23 @@ const searchMovie = async (name) => {
 }
 
 const updateTicketStatus = async (data) => {
+    
     try {
-        let movie = await Movie.findOne({ movieName:data.moviename})
+        console.log(data)
+        let movie = await Movie.findOne({ movieName:data.movieName})
         if (!movie) {
             return ({ error: 'Movie not found' });
         }
-        let status= movie.availableTickets-=data.tickets
+        let ticket= parseInt(data.tickets)
+        let status= movie.availableTickets-=ticket
+        console.log(status)
         if (status<=0) {
             movie.status = 'SOLD OUT';
         } else {
             movie.status = 'BOOK ASAP';
         }
-        await movie.save();
-        return ({message:`${movie.status}`,movie})
+        let updatedMovie= await movie.save();
+        return ({message:`${movie.status}`, updatedMovie})
     } catch (error) { 
         return ({ error: 'Error in updating ticket status' });
 
@@ -62,7 +66,7 @@ producer.on('error', (err) => {
 const deleteMovie = async (data) => {
     console.log(data)
     try {
-	        let movie=await Movie.findByIdAndDelete({_id:data.id},{movieName:data.moviename})
+	        let movie=await Movie.findOneAndDelete({movieName:data.moviename})
 
      
         if (!movie) {
@@ -72,7 +76,7 @@ const deleteMovie = async (data) => {
         const payloads = [
             {
                 topic: 'deletiontopic',
-                messages: JSON.stringify({ movieName: movie.movieName, theatreName: movie.theatreName, id: movie._id }),
+                messages: JSON.stringify({ movieName: movie.movieName, theatreName: movie.theatreName}),
                 partition: 0
             }
         ];

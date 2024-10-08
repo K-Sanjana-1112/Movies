@@ -32,4 +32,18 @@ export class MovieService {
 
   }
 
+  updateStatus(movieName:string,ticket:number): Observable<any> {
+    let tickets=ticket
+
+    return this.httpClient.post(`http://localhost:3000/api/v1.0/moviebooking/update/${movieName}`,{tickets})
+  }
+
+  deleteMovie(movieName:string){
+    let token=localStorage.getItem('token') 
+    const headers = {'Authorization':`Bearer ${token}`}
+
+    return this.httpClient.delete(`http://localhost:3000/api/v1.0/moviebooking/${movieName}/delete`,{headers:new HttpHeaders(headers)})
+
+  }
+
 }

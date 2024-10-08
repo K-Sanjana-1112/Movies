@@ -38,7 +38,7 @@ const createAdmin = async (data) => {
       if (result === false) {
         return ({ message: "Invalid Password" })
       } else {
-        console.log(admin)
+       
         let signedPwd=jwt.sign({email:admin.email},process.env.SECRET_KEY,{expiresIn:'1h'})      
         return ({ message: "Login Success", token: signedPwd, admin })
       }

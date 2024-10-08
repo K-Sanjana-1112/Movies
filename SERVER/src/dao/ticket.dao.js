@@ -25,6 +25,7 @@ const bookTicket = async (data) => {
         numberOfTickets: data.numberOfTickets,
         seatNumbers: data.seatNumbers
     }
+    console.log(newticket)
         let ticket = await Ticket.create(newticket)
         return ({ message: "ticket booked Successfully", ticket })
 
