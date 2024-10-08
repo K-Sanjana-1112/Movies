@@ -111,7 +111,7 @@ export class BookTicketComponent implements OnInit {
   countOfSeats!: HTMLElement;
   total!: HTMLElement;
   noOfTicketSelected!: HTMLSelectElement;
-  oneTicketPrice: number = 20;
+  oneTicketPrice: number = 100;
   totalPrice: number = 0;
   text!: HTMLElement;
   moviename: string;
@@ -174,10 +174,7 @@ export class BookTicketComponent implements OnInit {
       error: (err) => { console.log("Error in getting email", err) } });
   }
 
-  // isLoggedIn(): boolean {
-  //   const loginToken = localStorage.getItem('token');
-  //   return loginToken !== null;
-  // }
+
   
   updateSelectedCount(): void{
     const seatSelected = document.querySelectorAll('.row .seat.Selected');
@@ -207,7 +204,7 @@ export class BookTicketComponent implements OnInit {
   }
 
   ticketSelectedChange(e:Event){
-    this.totalPrice = +this.noOfTicketSelected.value * this.oneTicketPrice;
+    this.totalPrice = +this.noOfTicketSelected.value * this.movies.price;
     console.log(+this.noOfTicketSelected.selectedIndex);
     this.updateSelectedCount();
   }
@@ -222,9 +219,11 @@ export class BookTicketComponent implements OnInit {
     email:this.email,
 
     this.isProcess = true;
+
+  
     const data = {
       
-      movieName: this.moviename,
+      movieName:this.moviename,
       theatreName:this.movies.theatreName,
       numberOfTickets: this.ticketBookingForm.value.noOfTickets,
       seatNumbers: this.selectedSeats

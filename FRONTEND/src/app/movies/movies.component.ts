@@ -33,8 +33,8 @@ export class MoviesComponent {
   }
 
   bookTicket(name){
-    let moviename=encodeURIComponent(name)
-    this.router.navigate([`/bookTicket/${moviename}`]);
+ 
+    this.router.navigate([`/bookTicket/${name}`]);
     
   }
 

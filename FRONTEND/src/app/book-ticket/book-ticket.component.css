@@ -196,7 +196,7 @@ div.seat:focus{
 }
 
 
-@media screen and (max-width:1400px) {
+@media screen and (max-width:1700px) {
     .seatsContainer{
         margin-left: 15px;
         margin-right: 5px;
