@@ -1,25 +1,30 @@
-<ul class="nav justify-content-end  bg-dark text-light">
+<ul class="nav justify-content-end p-2  mb-5">
     @if(status===false){
     <li class="nav-item">
-      <a class="nav-link text-light " aria-current="page" routerLinkActive="Active" routerLink="home">HOME</a>
+      <a class="nav-link  " aria-current="page" routerLinkActive="Active" routerLink="home">HOME</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-light" routerLinkActive="Active" routerLink="register">REGISTER</a>
+      <a class="nav-link " routerLinkActive="Active" routerLink="register">REGISTER</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-light" routerLinkActive="Active" routerLink="login">LOGIN</a>
+      <a class="nav-link " routerLinkActive="Active" routerLink="login">LOGIN</a>
     </li>
     }
     @else{
     @if(!isUser){
   
     <li class="nav-item">
-      <a class="nav-link text-light" routerLinkActive="Active" routerLink="addMovie">Add Movie</a>
+      <a class="nav-link " routerLinkActive="Active" routerLink="addMovie">Add Movie</a>
     </li>
     }
+
+    <li class="nav-item">
+      <a class="nav-link " routerLinkActive="Active" routerLink="movies"
+        >Movies</a>
+    </li>
   
     <li class="nav-item">
-      <a class="nav-link text-light" routerLinkActive="Active" routerLink="login"
+      <a class="nav-link " routerLinkActive="Active" routerLink="login"
         (click)="userLogout()">LOGOUT</a>
     </li>
   

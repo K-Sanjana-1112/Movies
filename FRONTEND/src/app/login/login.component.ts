@@ -39,6 +39,8 @@ export class LoginComponent {
         next: (res) => {
           console.log(res)
           if (res.message === 'Login Success') {
+
+            
             localStorage.setItem('token', res.newUser.token);
 
             this.userService.setUserLoginStatus(true);
