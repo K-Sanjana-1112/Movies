@@ -68,86 +68,70 @@
  
 
 
+<!-- Movie Details Section -->
 <!-- <div class="container mt-5">
-    <div class="row">
-       Movie Poster 
-      <div class="col-md-3"  *ngfor="let movie of movies">
-        <img src="{{ movie.image }}" alt="Movie Poster" class="img-fluid">
-      </div>
-      
-     Movie Info 
-      <div class="col-md-9" *ngfor="let movie of movies">
-        <h2>{{ movie.movieName }}</h2>
-      
-        
-        
-        
-        Book Tickets Button 
-        <button class="btn btn-outline-dark p" data-toggle="modal" data-target="#bookTicketModal">
-            Book Ticket
-          </button>
-    
-     Movie Showtimes 
-    <div class="row mt-5">
+  <div class="row">
       <div class="col-md-12">
-        <h3>Details:</h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Theatre</th>
-              <th>Available Tickets</th>
-              <th>Total Tickets</th>
-              <th>Status</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{ movie.theatreName }}</td>
-              <td>{{ movie.availabletickets }}</td>
-              <td>{{ movie.totalSeats }}</td>
-              <td>  ₹ {{ movie.price }}</td>
-            </tr>
-          </tbody>
-        </table>
+          <h2>Movie Details</h2>
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Theatre</th>
+                      <th>Available Tickets</th>
+                      <th>Total Tickets</th>
+                      <th>Status</th>
+                      <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let movie of movies">
+                      <td>{{ movie.theatreName }}</td>
+                      <td>{{ movie.availableTickets }}</td>
+                      <td>{{ movie.totalSeats }}</td>
+                      <td>{{ movie.status }}</td>
+                      <td>₹{{ movie.price }}</td>
+                  </tr>
+              </tbody>
+          </table>
       </div>
-    </div>
-  </div> 
+  </div>
+</div> -->
 
-   Book Ticket Button -->
-
-  
-  <!-- Book Ticket Modal -->
-  <!--  <div class="modal fade" id="bookTicketModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!-- Book Ticket Modal -->
+<!-- <div class="modal fade" id="bookTicketModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Book Ticket</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src="https://static.vecteezy.com/system/resources/previews/035/227/664/non_2x/cinema-seats-booking-online-ui-design-scheme-or-film-theatre-places-reservation-template-layout-flat-cartoon-violet-dark-illustration-image-vector.jpg" alt="Movie Poster" class="img-fluid">
-          
-            <div>
-              <label for="ticketQuantity">Number of Tickets:</label>
-              <input type="number" id="ticketQuantity"  [(ngModel)]="ticketQuantity">
-            </div>
-            <div>
-                <label for="selectedSeats">Seat Numbers:</label>
-                <input type="text" id="selectedSeats"  [(ngModel)]="selectedSeats">
+          <div class="modal-header">
+              <h5 class="modal-title">Book Ticket</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <img src="https://static.vecteezy.com/system/resources/previews/035/227/664/non_2x/cinema-seats-booking-online-ui-design-scheme-or-film-theatre-places-reservation-template-layout-flat-cartoon-violet-dark-illustration-image-vector.jpg" alt="Booking" class="img-fluid mb-3">
+              <div class="form-group">
+                  <label for="ticketQuantity">Number of Tickets:</label>
+                  <input type="number" id="ticketQuantity" [(ngModel)]="ticketQuantity" class="form-control">
               </div>
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-outline-dark p" (click)="bookTickets(movies.title,movies.theatre)">Book Tickets</button>
-        </div>
+              <div class="form-group">
+                  <label for="selectedSeats">Seat Numbers:</label>
+                  <input type="text" id="selectedSeats" [(ngModel)]="selectedSeats" class="form-control">
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-outline-dark" (click)="bookTickets(movie.title, movie.theatre)">Book Tickets</button>
+          </div>
       </div>
-    </div>
-  </div> -->
+  </div>
+</div> -->
 
+<!-- View Ticket Button -->
+<!-- <button class="btn btn-info" data-toggle="modal" data-target="#viewTicketModal">
+  View Ticket
+</button> -->
+
+<<<<<<< HEAD
   <!-- View Ticket Button -->
 <!-- <button class="btn btn-info" data-toggle="modal" data-target="#viewTicketModal">
     View Ticket
@@ -157,35 +141,36 @@
  
   <!-- <div class="modal fade" id="viewTicketModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
+=======
+<!-- View Ticket Modal -->
+<!-- <div class="modal fade" id="viewTicketModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+>>>>>>> 081533256cbc2c780038c4a08d7512517506897e
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Ticket Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <h6>Ticket Information:</h6>
-              
-              <p><strong>Movie:</strong> {{ ticket.title }}</p>
-              <p><strong>Show Date:</strong> {{ ticket.showDate }}</p>
-             
-            </div>
-            <div class="col-md-6">
-              <h6>Seat Information:</h6>
-              <p><strong>Seat Number:</strong> {{ ticket.seatNum}}</p>
-              <p><strong>Total Seats:</strong> {{ ticket.seats }}</p>
-              <p><strong>Price:</strong> {{calculatePrice(ticket.seats,movies.price)}}</p>
-            </div>
+          <div class="modal-header">
+              <h5 class="modal-title">Ticket Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Ticket Information:</h6>
+                      <p><strong>Movie:</strong> {{ ticket.title }}</p>
+                      <p><strong>Show Date:</strong> {{ ticket.showDate }}</p>
+                  </div>
+                  <div class="col-md-6">
+                      <h6>Seat Information:</h6>
+                      <p><strong>Seat Number:</strong> {{ ticket.seatNum }}</p>
+                      <p><strong>Total Seats:</strong> {{ ticket.seats }}</p>
+                      <p><strong>Price:</strong> ₹{{ calculatePrice(ticket.seats, movie.price) }}</p>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
       </div>
-    </div>
-  </div> 
--->
-   
+  </div>
+</div> -->

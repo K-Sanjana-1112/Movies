@@ -1,273 +1,115 @@
-/* .modal {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-     background-color: #fefefe;
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+.column1, .column2 {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
 
-    padding: 2px;
-
-   
-    width: 500px;
-    height: 500px;
-
-    margin-left: 200px;
-    position: relative;
-
-  }
-
-  .modal-content {
-
-    background-color: #fefefe;
-
-
-    padding: 10px;
-
-    border: 10px solid #03705e67;
-   
-    width: 500px;
-    height: 500px;
-
-   
-    position: absolute;
-
-  }
-
-  .close {
-
-    color: #aaaaaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    float: left;  
-    font-size: 28px;
-   
+.card-title {
+    font-size: 24px;
     font-weight: bold;
+    margin-bottom: 10px;
+}
 
-  }
+img.card-img-top {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
 
-  .close:hover,
+label {
+    font-weight: bold;
+}
 
-  .close:focus {
-
-    color: black;
-
-    text-decoration: none;
-
+button {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-
-  }
-
-  .show-modal {
-
-    display: block;
-
-  } */
-
-  *{
-    overflow: hidden;
+    transition: background-color 0.3s ease;
 }
-h1{
-    background-color: aliceblue; text-align: center;
+
+button:hover {
+    background-color: #218838; /* Darker green */
 }
-.container{
-    display:flex;
-    background-color:rgb(157, 176, 239);
-}
-.card-img-top{
-    margin-top:5px;
-    padding:2px;
-    margin-left: auto;
-    margin-right: auto;
-    width:100%;
-    min-width: 50px;;
-    min-height: 50px;
-}
-button{
+
+.select {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
-    width:150px;
-}
-.column1{
-    margin: 50px;
-    width: 50%;
-    padding: 5px;
-}
-.column2{
-    margin: 50px;
-    width: 50%;
-    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-.seat{
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    height: 40px;
-    width: 40px;
-    background-color: grey;
-    margin-left: 10px;
+.text-danger {
+    color: red;
 }
-.seat1{
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    height: 40px;
-    width: 40px;
-    background-color: grey;
-    margin: 4px;
+
+.showcase {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
 }
-.seatsContainer{
-    padding:15px;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
+
+.showcase li {
+    margin-right: 20px;
+    text-align: center;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #6c757d; /* Gray */
+    cursor: pointer;
+}
+
+.seat.Selected {
+    background-color: #28a745; /* Green */
+}
+
+.seat.Occupied {
+    background-color: #dc3545; /* Red */
+}
+
+.seatsContainer {
+    margin-top: 20px;
+}
+
+.seat:hover {
+    background-color: #5a6268; /* Dark Gray */
 }
 
 .row {
-    margin-top:15px;
-    justify-content: space-between;
-}
-
-.seat.Selected{
-    background-color: blue;
-}
-.seat.Occupied{
-    background-color: antiquewhite;
-}
-.seat:nth-of-type(2){
-    margin-right: 20px;
-}
-.seat:nth-last-of-type(2){
-    margin-left: 20px;
-}
-.seat.blank{
-    height:0px;
-    width:0px;
-}
-.seat:not(.Occupied):hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
-.seat1:not(.Occupied):hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
-.showcase .seat:not(.Occupied):hover{
-    cursor: default;
-    transform: scale(1);
-}
-.showcase{
-    padding: 5px;
-    list-style-type: none;
     display: flex;
-    justify-content: space-between;
-}
-.showcase li{
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 5px 0;
 }
 
-label{
-    color: antiquewhite;
-    margin-top:10px;
-    font-size: 20px;
+#total {
+    font-size: 25px;
+    font-weight: bold;
 }
-span{
-    font-size: 20px;
-}
-select{
-    font-size: 20px;
-    width:150px;
-}
-.time{
-    height: 40px;
-    width: 80px;
-    background-color:white;
-    margin: 10px;
-    padding:5px;
-    display: flex;
-    display: inline-grid;
+
+h1 {
     text-align: center;
-    justify-content: center;
-}
-
-div.seat:focus{
-    background-color: blue;
-}
-
-
-@media screen and (max-width:1700px) {
-    .seatsContainer{
-        margin-left: 15px;
-        margin-right: 5px;
-        justify-content: center;
-    }
-    .seat{
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        height: 30px;
-        width: 30px;
-        margin-left: 2px;
-    }
-    .seat:nth-of-type(2){
-        margin-right: 10px;
-    }
-    .seat:nth-last-of-type(2){
-        margin-left: 10px;
-    }
-  
-}
-
-@media screen and (max-width:1200px) {
-    .container{
-        display: block;
-    }
-    .column1{
-        margin: 5px;
-        width: 100%;
-    }
-    .column2{
-        margin: 5px;
-        width: 100%;
-    }
-    .card-img-top{
-        margin:5px;
-        min-width: 20px;;
-        min-height: 20px;
-    }
-
-}
-@media screen and (max-width:850px) {
-    .seatsContainer{
-        justify-content:space-between;
-    }
-}
-@media screen and (max-width:400px) {
-    .container{
-        display: block;
-    }
-    .column1{
-        margin: 5px;
-        width: 100%;
-    }
-    .column2{
-        margin: 5px;
-        width: 100%;
-    }
-    .seat{
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        height: 20px;
-        width: 20px;
-        margin: 2px;
-    }
-}
-@media screen and (max-width:300px) {
-    .seat{
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        height: 15px;
-        width: 5px;
-        margin: 1px;
-    }
+    margin-bottom: 20px;
+    color: #007bff; /* Blue */
 }

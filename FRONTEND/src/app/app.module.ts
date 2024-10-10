@@ -12,6 +12,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NgToastModule } from 'ng-angular-popup';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgToastModule } from 'ng-angular-popup';
     AddMovieComponent,
     BookTicketComponent,
     HeaderComponent,
-    MoviesComponent
+    MoviesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

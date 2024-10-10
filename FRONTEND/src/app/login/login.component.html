@@ -1,9 +1,9 @@
 <div class="fluid-container card" style="width: 40rem; height: 30rem;">
     <p class="display-6 text-center" style="font-weight: 300;" >LOGIN</p>
   
-      @if(userCredentialsError.userCredErrStatus){
-        <p class="text-danger fs-3 text-center">{{userCredentialsError.userCredErrMsg}}</p>
-      }
+    <div *ngIf="userCredentialsError.userCredErrStatus" class="text-danger fs-3 text-center mb-3">
+        {{userCredentialsError.userCredErrMsg}}
+    </div>
   
     <form class=" w-50 mx-auto mt-3" [formGroup]="userCredentials" (ngSubmit)="onSubmitUser()" #ref="ngForm">
   
@@ -24,7 +24,6 @@
           <p *ngIf="email?.errors?.['minlength']" class="text-dark ">MinLength is 4</p>
           <p *ngIf="email?.errors?.['maxlength']" class="text-dark ">MaxLength is 6</p>
         </div>
-      </div>
       
       <div class="mb-2">
         <label for="password" class="form-label h5 text-dark">Password</label>
@@ -36,6 +35,6 @@
   
       <button class="btn mt-2 d-block mx-auto">Login</button>
       <p class="text-center  text-dark h6">Don't have an account?<a routerLink="/register">Register</a></p>
-  
+    </div>
     </form>
-  </div>
+</div>

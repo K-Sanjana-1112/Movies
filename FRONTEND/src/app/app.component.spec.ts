@@ -1,16 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component'; // Adjust the import as needed
+import { FooterComponent } from './footer/footer.component'; // Adjust the import as needed
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // Import CUSTOM_ELEMENTS_SCHEMA
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]) // Keep your routing setup
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent, // Declare your custom components
+        FooterComponent   // Declare your custom components
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA] // Optionally add this line
     }).compileComponents();
   });
 
