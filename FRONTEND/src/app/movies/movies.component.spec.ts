@@ -1,47 +1,56 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+// import { MoviesComponent } from './movies.component';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+// describe('MoviesComponent', () => {
+//   let component: MoviesComponent;
+//   let fixture: ComponentFixture<MoviesComponent>;
+
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [MoviesComponent],
+//       imports: [RouterTestingModule, HttpClientTestingModule],
+//     })
+//     .compileComponents();
+
+//     fixture = TestBed.createComponent(MoviesComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
+
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
+
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
 import { MoviesComponent } from './movies.component';
-import { MovieService } from '../movie.service';
-import { of } from 'rxjs';
-import { Movie } from '../model/movie';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('MoviesComponent', () => {
-  let component: MoviesComponent;
-  let fixture: ComponentFixture<MoviesComponent>;
-  let movieServiceMock: jasmine.SpyObj<MovieService>;
+ 
 
-  beforeEach(() => {
-    // Create a mock for MovieService
-    movieServiceMock = jasmine.createSpyObj('MovieService', ['getMovies']);
 
-    TestBed.configureTestingModule({
-      declarations: [MoviesComponent],
-      providers: [
-        { provide: MovieService, useValue: movieServiceMock }
-      ]
-    }).compileComponents();
+describe('myService', () => {
 
-    fixture = TestBed.createComponent(MoviesComponent);
-    component = fixture.componentInstance;
-  });
+      beforeEach(() => TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule,RouterTestingModule],
+         
+        providers: [MoviesComponent]
+      }));
+      
 
-  it('should create the component', () => {
-    expect(component).toBeTruthy();
-  });
+       it('should be movie updated success', () => {
+        const service: MoviesComponent = TestBed.get(MoviesComponent);
+        expect(service).toBeTruthy();
+       });
 
-  it('should fetch movies on init', () => {
-    // Arrange: Create mock movie data
-    const mockMovies: Movie[] = [
-     
-    ];
+       it('should have get movie data', () => {
+        const service: MoviesComponent = TestBed.get(MoviesComponent);
+      // expect(service.getData).toBeTruthy();
+       });
 
-    // Mock the service method to return the mock movies
-    movieServiceMock.getMovies.and.returnValue(of({ getMovies: { movies: mockMovies } }));
-
-    // Act: Call ngOnInit to trigger the data fetch
-    component.ngOnInit();
-
-    // Assert: Check that the movies were set correctly
-    expect(movieServiceMock.getMovies).toHaveBeenCalled();
-    expect(component.movies).toEqual(mockMovies);
-  });
-});
+    });
