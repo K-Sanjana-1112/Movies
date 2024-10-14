@@ -13,7 +13,7 @@ describe('UserService', () => {
     service = TestBed.inject(UserService);
   });
 
-  it('should be created', () => {
+  it('should be added movie successfully', () => {
     expect(service).toBeTruthy();
   });
 });

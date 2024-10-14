@@ -17,12 +17,12 @@ describe('myService', () => {
       }));
       
 
-       it('should be created', () => {
+       it('should be created new movie', () => {
         const service: MovieService = TestBed.get(MovieService);
         expect(service).toBeTruthy();
        });
 
-       it('should have getData function', () => {
+       it('should have getData movie', () => {
         const service: MovieService = TestBed.get(MovieService);
       // expect(service.getData).toBeTruthy();
        });

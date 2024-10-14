@@ -10,10 +10,10 @@
 
 // describe('BookTicketComponent', () => {
 
-//       // beforeEach(() => TestBed.configureTestingModule({
-//       //   imports: [HttpClientTestingModule], 
-//       //   providers: [BookTicketComponent]
-//       // }));
+//       beforeEach(() => TestBed.configureTestingModule({
+//         imports: [HttpClientTestingModule], 
+//         providers: [BookTicketComponent]
+//       }));
 
 //        it('should be created', () => {
 //         const service: BookTicketComponent = TestBed.get(BookTicketComponent);

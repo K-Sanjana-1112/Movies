@@ -43,12 +43,12 @@ describe('myService', () => {
       }));
       
 
-       it('should be created', () => {
+       it('should be movie updated success', () => {
         const service: MoviesComponent = TestBed.get(MoviesComponent);
         expect(service).toBeTruthy();
        });
 
-       it('should have getData function', () => {
+       it('should have get movie data', () => {
         const service: MoviesComponent = TestBed.get(MoviesComponent);
       // expect(service.getData).toBeTruthy();
        });

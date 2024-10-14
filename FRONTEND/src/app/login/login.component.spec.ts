@@ -13,12 +13,12 @@ describe('myService', () => {
         providers: [UserService]
       }));
 
-       it('should be created', () => {
+       it('should be user creation data', () => {
         const service: UserService = TestBed.get(UserService);
         expect(service).toBeTruthy();
        });
 
-       it('should have getData function', () => {
+       it('should have  user data ', () => {
         const service: UserService = TestBed.get(UserService);
       
        });
