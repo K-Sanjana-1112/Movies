@@ -141,29 +141,9 @@ onReset(){
 
 }
 
-update():void{
-   this.movieService.updateStatus(this.name,this.bookedTickets).subscribe(
-      (res)=>{ 
-        if(res.message==='SOLD OUT'){ console.log('soldout')}
-        else{ console.log('BOOK ASAP')}
-    
-      },
-      (err)=>{
-        console.log("Error in Updating...",err)
-      }
-    
-    )
-  }
 
-  deleteMovie(movieName){
-    this.movieService.deleteMovie(movieName).subscribe(
-      (res)=>{ 
-         console.log('res',res)
-        this.movieService.getMovies()
-      }
-      )
 
-  }
+
 
 }
 

@@ -1,11 +1,21 @@
 /* styles.css or form-styles.css */
-
+.container{
+    margin-top: 100px;
+    margin-left: 5px;
+}
+h3{
+    background: -webkit-linear-gradient(black,#29d4b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 body {
     background-color: #f0f4f8;
     font-family: Arial, sans-serif;
 }
 
-.container {
+.lead {
     max-width: 600px;
     margin: auto;
     padding: 20px;

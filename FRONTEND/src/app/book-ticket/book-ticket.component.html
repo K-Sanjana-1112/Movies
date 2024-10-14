@@ -1,93 +1,3 @@
-<!-- <div class="container mt-4">
-  <div class="row">
-<div class="col-md-6">
-<div >
-  <div  *ngIf="movies">
-   
-    <div class="card p-100 d-flex flex-column" widhth="400px">
-      <img [src]="movies.image" class="card-img-top " alt="movies Image" height="250px">
-      <div class="card-body">
-        <h5 class="card-title">{{ movies.movieName }}</h5>
-        <p class="card-text">Theatre : {{ movies.theatreName }}</p>
-        <p class="card-text">Total : {{movies.totalSeats}}</p>
-        <p class="card-text">Available : {{movies.availableTickets}}</p>
-        <p class="card-text">Price : ₹ {{movies.price}}</p>
-        <button class="btn btn-primary" (click)="openForm()">Book Now</button>
-      </div>
-      
-    </div>
-  </div>
-</div> 
-</div>
-
- Button to trigger modal 
-
-
-
- The Modal 
-<div class="col-md-6">
-
-
-<div  class="modal" [ngClass]="{'show-modal': showModal}">
-
-  <div class="modal-content">
-
-    <span class="close" (click)="closeForm()">&times;</span>
-
-    <h2>Book Your Tickets</h2>
-
-     Booking Form 
-
-    <form (ngSubmit)="submitForm()">
-
-      <div>
-
-        <label for="movieName">Movie Name:</label>
-
-        <input type="text" id="movieName"  class="form-control" [(ngModel)]="movies.movieName" name="movieName" required>
-
-      </div>
-
-      <div>
-
-        <label for="theatreName">Theatre Name:</label>
-
-
-        <input type="text" id="theatreName" class="form-control" [(ngModel)]="movies.theatreName" name="theatreName" required>
-
-      </div>
-
-      <div>
-
-        <label for="selectedSeats">Number of Tickets:</label>
-
-        <input type="number" id="selectedSeats" class="form-control" [(ngModel)]="formData.numberOfTickets" name="numberOfTickets" required>
-
-      </div>
-
-      <div>
-
-        <label for="selectedSeats">Seat Numbers</label>
-
-        <input type="number" id="selectedSeats" class="form-control" [(ngModel)]="formData.seatNumbers" name="seatNumbers" required>
-
-      </div>
-
-      <button type="submit" class="btn btn-success mt-3">Book Tickets</button>
-
-    </form>
-
-  </div>
-
-</div>
-
-
-
-</div>
-</div>
-
-</div> -->
-
 
 <h1>Ticket Booking</h1>
 <div class="container1">
@@ -99,8 +9,7 @@
       </div>
         <p>{{email}}</p>
         <h2 name="title" class="card-title text-white">Movie: {{ movies.movieName }}</h2>
-        <img class="col-lg-3" [src]="movies.image" class="card-img-top" style="width: 20rem;" alt="images"/>
-        <!-- <label>Overview:</label> <br> -->
+        <img class="col-lg-3" [src]="movies.image" class="card-img-top" style="height: 30rem;" alt="images"/>
         <p name="overview">{{ movieOverview }}</p>
         <label>Show Timings:</label><br>
         <div class="time">09:00AM</div>
@@ -110,18 +19,18 @@
         <br>
         <hr>
         <label>Select a show time: </label>
-        <select formControlName="showTime" name="tickets" id="showTime" [ngClass]="{'is-invalid': submitted && ticketBookingForm.controls['showTime'].errors}">
-            <option value="09:00AM">09:00AM</option>
-            <option value="12:00AM">12:00PM</option>
-            <option value="04:00AM">04:00PM</option>
-            <option value="10:30AM">10:30PM</option>
+        <select formControlName="showTime" style="width: 650px;" name="tickets" class="form-control" id="showTime" [ngClass]="{'is-invalid': submitted && ticketBookingForm.controls['showTime'].errors}">
+            <option style="font-size: large;" value="09:00AM">09:00AM</option>
+            <option style="font-size: large;" value="12:00AM">12:00PM</option>
+            <option style="font-size: large;" value="04:00AM">04:00PM</option>
+            <option style="font-size: large;" value="10:30AM">10:30PM</option>
         </select><br>
         <div *ngIf="submitted && ticketBookingForm.controls['showTime'].errors" class="text-danger">
             <div *ngIf="submitted && ticketBookingForm.controls['showTime'].errors['required']">
                 Select a show timing
             </div>
          </div>
-        <label>Number of Tickets:</label> <select formControlName="noOfTickets" name="tickets" id="tickets" (change)="ticketSelectedChange($event)" [ngClass]="{'is-invalid': submitted && ticketBookingForm.controls['noOfTickets'].errors}">
+        <label class="form-label" >Number of Tickets:</label> <select formControlName="noOfTickets" class="form-control" style="width: 650px;" name="tickets" id="tickets" (change)="ticketSelectedChange($event)" [ngClass]="{'is-invalid': submitted && ticketBookingForm.controls['noOfTickets'].errors}">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -138,10 +47,10 @@
                 Choose no. of tickets
             </div>
          </div>
-        <label>Ticket Price: </label><span>₹ {{movies.price}}/Ticket</span><br>
-        <label>Seat Number: </label><span id="text"></span><br>
+        <label class="form-label">Ticket Price: </label><span style="font-size: large;">₹ {{movies.price}}/Ticket</span><br>
+        <label class="form-label">Seat Number: </label><span  style="font-size: large;" id="text"></span><br>
        
-        <label style="color: white; background-color: rgb(12, 136, 119); font-size: 25px; padding: 5px;">Total Ticket Price: ₹<b><span id="total" style="font-size: 25px;"></span></b></label><br> 
+        <label style="color:black; background-color:white; font-size: 25px; padding: 5px;">Total Ticket Price: ₹<b><span id="total" style="font-size: 25px;"></span></b></label><br> 
         
     
         <button class="btn btn-success">Proceed To Pay</button>
@@ -154,15 +63,15 @@
         <ul class="showcase">
             <li>
                 <div class="seat"></div>
-                <small>Not Selected</small>
+                <small style="font-size: large;">Not Selected</small>
             </li>
             <li>
                 <div class="seat Selected"></div>
-                <small>Selected</small>
+                <small style="font-size: large;">Selected</small>
             </li>
             <li>
                 <div class="seat Occupied"></div>
-                <small>Already Occupied</small>
+                <small style="font-size: large;">Already Occupied</small>
             </li>
         </ul>
 
@@ -251,7 +160,7 @@
                 <div class="seat"></div>
                 <div class="seat"></div>
             </div>
-            <label>You have selected <span id="countS" style="color:antiquewhite; background-color:brown; font-size: 30px;"></span> Seats</label>
+            <label>You have selected <span id="countS" style="color:antiquewhite; width: 20px; background-color:rgb(22, 131, 125); font-size: 30px;"></span> Seats</label>
         </div>
         </div>
 </div>

@@ -23,6 +23,12 @@ export class MoviesComponent {
   userService=inject(UserService)
   isUser: boolean;
  
+  isPopupOpen: boolean;
+  numOfTickets=0;
+  bookedTickets: number;
+   movieName:string;
+  user: string;
+  
  
 
   ngOnInit(): void {
@@ -30,23 +36,29 @@ export class MoviesComponent {
     this.movieService.getMovies().subscribe({
      next:(res)=>{
       this.movies=res.getMovies.movies
-      
-    
-      // this.movieCounts = new Array(this.movies.length).fill(0);
      }
      
     
      
     })
 
+    this.userService.getCurrentUser().subscribe(
+      (data) => {
+        this.user = data.lastName;
+      })
+      console.log(this.user)
+
     this.userService.getLoginType().subscribe(
       (res)=>{
       this.isUser=res==='user';
       })
+      console.log(this.isUser)
 
      this.userService.getUserLoginStatus().subscribe({
       next:(userLoginStatus)=>this.status=userLoginStatus
      })
+     
+     
      
        
     
@@ -70,10 +82,64 @@ export class MoviesComponent {
   }
 
   bookTicket(name){
+    
  
     this.router.navigate([`/bookTicket/${name}`]);
     
   }
+
+  deleteMovie(movieName){
+    this.movieService.deleteMovie(movieName).subscribe(
+      (res)=>{ 
+         console.log('res',res)
+        this.movieService.getMovies()
+      }
+      )
+
+  }
+
+   openForm(name) {
+    this.isPopupOpen=true
+    this.movieName=name
+    
+  }
+  
+   closeForm() {
+    this.isPopupOpen=false
+  }
+
+  update():void{
+    this.movieService.updateStatus(this.movieName,this.numOfTickets).subscribe(
+       (res)=>{ 
+        console.log(res)
+         if(res.message==='SOLD OUT'){
+          Swal.fire({
+            title:'Info',
+            text:'SOLD OUT',
+            icon:'info',
+            position:'center',
+            timer:4000,
+            confirmButtonText:'OK'
+          })
+        }
+         else{ 
+          Swal.fire({
+            title:'Info',
+            text:'BOOK ASAP',
+            icon:'info',
+            position:'center',
+            timer:4000,
+            confirmButtonText:'OK'
+          })
+          }
+     
+       },
+       (err)=>{
+         console.log("Error in Updating...",err)
+       }
+     
+     )
+   }
 
   
 

@@ -5,7 +5,7 @@ body {
 }
 
 .container1 {
-    /* max-width: 1200px; */
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -31,13 +31,14 @@ label {
 }
 
 button {
-    background-color: #28a745; /* Green */
+    background-color:#29d4b7; /* Green */
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 200px;
 }
 
 button:hover {
