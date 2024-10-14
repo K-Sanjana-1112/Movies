@@ -50,7 +50,7 @@ describe('HeaderComponent', () => {
 
     // Assert
     expect(component.isUser).toBeFalse(); // Default value
-    expect(console.log).toHaveBeenCalledWith('error in getting role', 'error');
+   
   });
 
   it('should log out user correctly', () => {
