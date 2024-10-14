@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -39,8 +40,16 @@ export class LoginComponent {
         next: (res) => {
           console.log(res)
           if (res.message === 'Login Success') {
+            Swal.fire({
+              title:'Success',
+              text:'Login was Successful',
+              icon:'success',
+              position:'center',
+              timer:3000,
+              confirmButtonText:'OK'
+            })
 
-            
+
             localStorage.setItem('token', res.newUser.token);
 
             this.userService.setUserLoginStatus(true);
@@ -65,6 +74,14 @@ export class LoginComponent {
      this.userService.adminLogin(formData).subscribe({
         next: (res) => {
           if (res.message === 'Login Success') {
+            Swal.fire({
+              title:'Success',
+              text:'Login was Successful',
+              icon:'success',
+              position:'center',
+              timer:3000,
+              confirmButtonText:'OK'
+            })
             localStorage.setItem('token', res.newAdmin.token)
             this.userService.setUserLoginStatus(true)
             this.userService.setCurrentUser(res.newAdmin.admin)

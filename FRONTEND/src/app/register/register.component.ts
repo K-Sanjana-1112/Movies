@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Admin } from '../model/Admin';
 import { User } from '../model/User';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -70,6 +71,14 @@ export class RegisterComponent {
             console.log(res)
 
             if (res.message === "User Created Successfully") {
+              Swal.fire({
+                title:'Success',
+                text:'Registration was Successful',
+                icon:'success',
+                position:'center',
+                timer:3000,
+                confirmButtonText:'OK'
+              })
               this.router.navigate(['/login'])
             }
             else {
@@ -88,6 +97,14 @@ export class RegisterComponent {
           next: (res) => {
             if (res.message === "Admin Created Successfully") {
               this.router.navigate(['/login'])
+              Swal.fire({
+                title:'Success',
+                text:'Registration was Successful',
+                icon:'success',
+                position:'center',
+                timer:3000,
+                confirmButtonText:'OK'
+              })
             }
             else {
               this.duplicateAdminStatus = true;

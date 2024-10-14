@@ -1,5 +1,4 @@
 .fluid-container {
-   /* background-color: rgb(90, 161, 161); */
     padding: 40px 20px; /* Padding for the container */
     border-radius: 8px; /* Rounded corners */
     height: 700px;
@@ -21,6 +20,7 @@
 
 .form-control {
     border-radius: 4px; /* Rounded corners for inputs */
+    border-color: #29d4b7;
     border: 1px solid #ced4da; /* Light border color */
     transition: border-color 0.3s;
     
@@ -57,20 +57,16 @@ button{
     border-color: black;
 
 }
+.register{
+    color: #29d4b7;
+    text-decoration: underline; 
+}
 
 button:hover{
     background-color: #29d4b7;
     border-color: black;
 }
 
-.back {
-    margin-top: 15px; /* Space above the back link */
-}
-
-.back a {
-    color: #29d4b7; 
-    text-decoration: underline; 
-}  
-.back a:hover { 
-    color: #219259; 
+.register:hover { 
+    color: black; 
 }

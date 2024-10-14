@@ -1,4 +1,4 @@
-<ul class="nav justify-content-end p-2  mb-5">
+<ul class="nav fixed-top navbar-expand-sm justify content-end p-2 mb-5">
     @if(status===false){
     <li class="nav-item">
       <a class="nav-link  " aria-current="page" routerLinkActive="Active" routerLink="home">HOME</a>
@@ -14,14 +14,18 @@
     @if(!isUser){
   
     <li class="nav-item">
-      <a class="nav-link " routerLinkActive="Active" routerLink="addMovie">Add Movie</a>
+      <a class="nav-link " routerLinkActive="Active" routerLink="movies"
+        >Movies</a>
     </li>
+
     }
 
     <li class="nav-item">
       <a class="nav-link " routerLinkActive="Active" routerLink="movies"
         >Movies</a>
     </li>
+
+
   
     <li class="nav-item">
       <a class="nav-link " routerLinkActive="Active" routerLink="login"

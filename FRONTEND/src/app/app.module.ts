@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { FooterComponent } from './footer/footer.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgToastModule
+    NgToastModule,
+    SweetAlert2Module.forRoot()
   
   ],
   providers: [provideHttpClient(withFetch())],

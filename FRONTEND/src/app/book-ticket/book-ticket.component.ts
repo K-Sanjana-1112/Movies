@@ -4,6 +4,7 @@ import { MovieService } from '../movie.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../model/User';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-ticket',
@@ -240,6 +241,14 @@ export class BookTicketComponent implements OnInit {
            this.bookingService.setBookingData(data);
           // Assuming the response contains a success flag or message
           console.log('ticket booked Successfully', res);
+          Swal.fire({
+            title:'Success',
+            text:'Your ticket was booked Successfully',
+            icon:'success',
+            position:'center',
+            timer:3000,
+            confirmButtonText:'OK'
+          })
           // Clear the form and reset variables
           this.ticketBookingForm.reset();
           this.selectedSeats = [];

@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MovieService } from '../movie.service';
 import { NgToastService } from 'ng-angular-popup';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-movie',
@@ -111,6 +112,14 @@ export class AddMovieComponent {
         console.log(res)
          this.onReset()
         if(res.message==="Movie added Succesfully"){
+          Swal.fire({
+            title:'Success',
+            text:'Movie added',
+            icon:'success',
+            position:'center',
+            timer:3000,
+            confirmButtonText:'OK'
+          })
           
           
   

@@ -1,11 +1,13 @@
 .fluid-container {
-    background-color: #897792;
+    margin-top: 100px;
+    margin-bottom: 100px;
     padding: 40px 20px; /* Padding for the container */
     border-radius: 8px; /* Rounded corners */
+    height: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-.display-2 {
+.display-1 {
     margin-bottom: 20px; /* Space below the title */
 }
 
@@ -15,27 +17,36 @@
 
 .form-label {
     font-weight: 600; /* Bold labels */
-    color: #ffffff; /* White label text */
-}
-
-.form-check-label {
-    color: #17a2b8; /* Info color for radio labels */
+    
 }
 
 .form-control {
     border-radius: 4px; /* Rounded corners for inputs */
+    border-color: #29d4b7;
     border: 1px solid #ced4da; /* Light border color */
     transition: border-color 0.3s;
+    
+}
+
+.card{
+    margin-left: 460px;
+    border: #29d4b7 3px solid;
+    border-radius: 5px ;
+    box-shadow:0.0.0.3rem #1cb198;
 }
 
 .form-control:focus {
-    border-color: #80bdff; /* Highlight border on focus */
+    border-color: #29d4b7; /* Highlight border on focus */
     outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.151); /* Focus shadow */
+}
+
+.text-dark {
+    margin-top: 5px; /* Space above warning messages */
 }
 
 .btn-success {
-    background-color: #28a745; /* Button color */
+    background-color: #08866b; /* Button color */
     border: none; /* Remove default border */
     color: white; /* Text color */
     padding: 10px 20px; /* Button padding */
@@ -43,6 +54,15 @@
     transition: background-color 0.3s; /* Smooth background transition */
 }
 
-.btn-success:hover {
-    background-color: #218838; /* Darker green on hover */
+button{
+    border-color: black;
+
 }
+
+
+button:hover{
+    background-color: #29d4b7;
+    border-color: black;
+}
+
+

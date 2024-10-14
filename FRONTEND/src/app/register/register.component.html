@@ -1,4 +1,4 @@
-<div class="fluid-container">
+<div class="fluid-container card" style="width: 40rem; height: 50rem;">
     <div *ngIf="duplicateUserStatus === true">
         <p class="text-white fs-2 text-center">User already existed</p>
     </div>
@@ -6,10 +6,10 @@
         <p class="text-white fs-2 text-center">Author already existed</p>
     </div>
 
-    <p class="display-2 text-center text-white" style="font-weight: 400;">REGISTER</p>
+    <!-- <p class="display-6 text-center text-dark" style="font-weight: 300;">REGISTER</p> -->
 
     <div class="container">
-        <form class="w-50 mx-auto mt-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #ref="ngForm">
+        <form class="w-50 mx-auto" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #ref="ngForm">
             <div class="mb-3">
                 <div class="form-check form-check-inline">
                     <input type="radio" formControlName="registerType" id="user" value="user" class="form-check-input">
@@ -60,7 +60,7 @@
                 <input type="text" id="contactNum" class="form-control" formControlName="contactNum">
             </div>
 
-            <button type="submit" class="btn btn-success d-block mx-auto">Register</button>
+            <button type="submit" class="btn  d-block mx-auto">Register</button>
         </form>
     </div>
 </div>
