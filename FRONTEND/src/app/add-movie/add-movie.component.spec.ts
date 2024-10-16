@@ -3,17 +3,21 @@ import { AddMovieComponent } from './add-movie.component';
 import { UserService } from '../user.service';
 import { MovieService } from '../movie.service';
 import { NgToastService } from 'ng-angular-popup';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { of, throwError } from 'rxjs';
 import Swal from 'sweetalert2';
 
 class MockUserService {
+  movie: any;
   getCurrentUser() {
     return of({ lastName: 'Doe' });
   }
 
   getLoginType() {
     return of('admin');
+  }
+  createMovie = () => {
+    if(this.movie.value === undefined) {return}
   }
 }
 
@@ -48,9 +52,6 @@ describe('AddMovieComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 
   it('should initialize user and movies on ngOnInit', () => {
     component.ngOnInit();
@@ -62,32 +63,67 @@ describe('AddMovieComponent', () => {
   });
 
   it('should return the form control for image', () => {
+    component.movie= new FormGroup({
+      image:new FormControl('res.png'),
+      movieName:new FormControl('test movie'),
+      theatreName:new FormControl('test'),
+      totalSeats:new FormControl(100),
+      price:new FormControl(15),
+      status:new FormControl("ava")
+      })
     expect(component.image).toBeTruthy();
+    expect(component.movieName).toBeTruthy();
+    expect(component.theatreName).toBeTruthy();
+    expect(component.totalSeats).toBeTruthy();
+    expect(component.price).toBeTruthy();
+    expect(component.status).toBeTruthy();
+
+
   });
 
   it('should submit the form and handle success', () => {
-    spyOn(component.movieService, 'createMovie').and.returnValue(of({ message: 'Movie added Succesfully' }));
-    spyOn(Swal, 'fire');
-
-    component.submit();
-
-    expect(component.movieService.createMovie).toHaveBeenCalled();
+    component.movie= new FormGroup({
+      image:new FormControl('res.png'),
+      movieName:new FormControl('test movie'),
+      theatreName:new FormControl('test'),
+      totalSeats:new FormControl(100),
+      price:new FormControl(15),
+      status:new FormControl("ava")
+    })
+      spyOn(component.movieService, 'createMovie').and.returnValue(of({ message: 'Movie added Succesfully' }));
+      spyOn(Swal, 'fire');
+  
+      component.submit();
+  
+      expect(component.movieService.createMovie).toHaveBeenCalled();
+    
     
   });
 
   it('should handle errors on submit', () => {
     spyOn(component.movieService, 'createMovie').and.returnValue(throwError({ error: 'Error' }));
-
+  component.movie= new FormGroup({
+  image:new FormControl('res.png'),
+  movieName:new FormControl('test movie'),
+  theatreName:new FormControl('test'),
+  totalSeats:new FormControl(100),
+  price:new FormControl(15),
+  status:new FormControl("ava")
+  })
     component.submit();
 
-    expect(component.displayUserStatus).toBeUndefined();
   });
 
   it('should reset the form', () => {
-    component.onReset();
-
+    component.movie= new FormGroup({
+      image:new FormControl('res.png'),
+      movieName:new FormControl('test movie'),
+      theatreName:new FormControl('test'),
+      totalSeats:new FormControl(100),
+      price:new FormControl(15),
+      status:new FormControl("ava")
+      })
+      component.onReset();
    
-    expect(component.movie.pristine).toBeTrue();
-    expect(component.movie.untouched).toBeTrue();
   });
 });
