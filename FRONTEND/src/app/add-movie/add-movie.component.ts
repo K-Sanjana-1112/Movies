@@ -111,7 +111,7 @@ export class AddMovieComponent {
        (res)=>{
         console.log(res)
          this.onReset()
-        if(res.message==="Movie added Succesfully"){
+        if(res.message=="Movie Added Successfully"){
           Swal.fire({
             title:'Success',
             text:'Movie added',
