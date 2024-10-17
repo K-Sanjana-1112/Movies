@@ -1,5 +1,7 @@
+<div class="login">
+
 <div class="fluid-container card" style="width: 40rem; height: 30rem;">
-    <p class="display-6 text-center" style="font-weight: 600;" >LOGIN</p>
+    <p class="h3 text-center" style="font-weight: 600;" >LOGIN</p>
   
     <div *ngIf="userCredentialsError.userCredErrStatus" class="text-danger fs-3 text-center mb-3">
         {{userCredentialsError.userCredErrMsg}}
@@ -9,10 +11,10 @@
   
       <div class="mb-2">
         <input  type="radio" class="mr-1" formControlName="loginType"  id="user" value="user">
-        <label for="user" class="text-dark mr-3">User</label>
+        <label for="user" class="h5 text-dark mr-3">User</label>
     
         <input type="radio" class="mr-1" formControlName="loginType"  id="admin" value="admin">
-        <label for="admin" class="text-dark">Admin</label>
+        <label for="admin" class="h5 text-dark">Admin</label>
       </div>
     
   
@@ -33,8 +35,10 @@
         </div>
       </div>
   
-      <button class="btn mt-2 d-block mx-auto mt-3 mb-4">Login</button>
+      <button class="btn h6 mt-2 d-block mx-auto mt-3 mb-4">Login</button>
       <p class="text-center  text-dark h6">Don't have an account?<a class="register" routerLink="/register">Register</a></p>
     </div>
     </form>
+</div>
+
 </div>

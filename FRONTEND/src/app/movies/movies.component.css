@@ -8,13 +8,29 @@ p{
     -webkit-background-clip: text;
     background-clip: text;
    -webkit-text-fill-color: transparent;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+   font-style: italic;
 }
 
+.dlt{
+  color: red;
+  background-color:white;
+  border: 2px solid black;
+  border-radius: 3px;
+  max-width: fit-content;
+  padding: 10px;
+
+}
+.dlt:hover{
+  background-color: red;
+  border-color: black;
+  color: black;
+
+}
 button{
-    color: black;
+    color: red;
     background-color:white;
-    border: 2px solid #29d4b7;
+    border: 2px solid red;
     border-radius: 3px;
     max-width: fit-content;
     padding: 10px;
@@ -22,8 +38,9 @@ button{
 }
 
 button:hover{
-    background-color: #29d4b7;
+    background-color: red;
     border-color: black;
+    color: black;
 
 
 }
@@ -31,7 +48,7 @@ button:hover{
 .book{
     color: black;
     background-color:white;
-    border: 2px solid #29d4b7;
+    border: 2px solid red;
     border-radius: 3px;
     max-width: fit-content;
     padding: 10px;
@@ -39,7 +56,7 @@ button:hover{
 }
 
 .book:hover{
-    background-color: #29d4b7;
+    background-color: red;
     border-radius: 3px;
     border: 2px solid black;
 }
@@ -50,9 +67,9 @@ button:hover{
     padding: 10px 20px;
   
     cursor: pointer;
-    color: black;
+    color: red;
     background-color:white;
-    border: 2px solid #29d4b7;
+    border: 2px solid black;
     border-radius: 3px;
     max-width: fit-content;
     padding: 10px;

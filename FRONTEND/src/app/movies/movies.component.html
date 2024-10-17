@@ -16,7 +16,7 @@
         <div class="card p-100 d-flex flex-column" height="500px" style="width: 18rem; border-radius: 3px; margin: 5%;">
             @if(status===true){
               <img [src]="movie.image" class="card-img-top"  alt="movie Image" height="530px" width="25px" >
-             <h5 class="card-title mt-2" style="text-align:center;">{{ movie.movieName }}</h5>
+             <h5 class="card-title mt-2" style="text-align:center; font-style: italic; color: red;">{{ movie.movieName }}</h5>
               
               @if(!isUser){
                  <div class="container">
@@ -44,7 +44,7 @@
 
             }@else{
               <img [src]="movie.image" class="card-img-top" (click)="login()" alt="movie Image" style="cursor: pointer;" height="530px" width="25px" >
-            <h5 class="card-title mt-2" style="text-align:center;">{{ movie.movieName }}</h5>
+            <h5 class="card-title mt-2" style="text-align:center; font-style: italic; color: red;">{{ movie.movieName }}</h5>
             }
          
 

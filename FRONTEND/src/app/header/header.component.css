@@ -1,14 +1,14 @@
 ul{
-    background-color:#29d4b7;
+    background-color:black;
     margin-bottom: 10px;
 
     
 }
 
 a:hover{
-    color:#29d4b7;
+    color:black;
     
-    background-color:black;
+    background-color:red;
     
     
 }
@@ -18,7 +18,8 @@ a:hover{
 } */
 
 a{
-    color:black;
+    color:red;
     font-size: medium;
     font-weight: bold;
+    font-style: italic;
 }

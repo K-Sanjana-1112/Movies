@@ -22,21 +22,21 @@
 
 .form-control {
     border-radius: 4px; /* Rounded corners for inputs */
-    border-color: #29d4b7;
-    border: 1px solid #ced4da; /* Light border color */
+    border-color: black;
+    border: 1px solid rgba(255, 0, 0, 0.39); /* Light border color */
     transition: border-color 0.3s;
     
 }
 
 .card{
     margin-left: 460px;
-    border: #29d4b7 3px solid;
+    border: black 3px solid;
     border-radius: 5px ;
-    box-shadow:0.0.0.3rem #1cb198;
+    box-shadow:0.0.0.3rem black;
 }
 
 .form-control:focus {
-    border-color: #29d4b7; /* Highlight border on focus */
+    border-color: black; /* Highlight border on focus */
     outline: none; /* Remove default outline */
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.151); /* Focus shadow */
 }
@@ -46,7 +46,7 @@
 }
 
 .btn-success {
-    background-color: #08866b; /* Button color */
+    background-color: black; /* Button color */
     border: none; /* Remove default border */
     color: white; /* Text color */
     padding: 10px 20px; /* Button padding */
@@ -55,14 +55,15 @@
 }
 
 button{
-    border-color: black;
+    border-color: red;
 
 }
 
 
 button:hover{
-    background-color: #29d4b7;
-    border-color: black;
+    background-color: black;
+    border-color: red;
+    color: red;
 }
 
 

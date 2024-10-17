@@ -6,18 +6,18 @@
         <p class="text-white fs-2 text-center">Author already existed</p>
     </div>
 
-    <p class="display-6 text-center text-dark" style="font-weight: 600;">REGISTER</p>
+    <p class="h3 text-center text-dark" style="font-weight: 600;">REGISTER</p>
 
     <div class="container">
         <form class="w-50 mx-auto" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #ref="ngForm">
             <div class="mb-3">
                 <div class="form-check form-check-inline">
                     <input type="radio" formControlName="registerType" id="user" value="user" class="form-check-input">
-                    <label for="user" class="form-check-label text-info">User</label>
+                    <label for="user" class="h5 form-check-label text-dark">User</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input type="radio" formControlName="registerType" id="admin" value="admin" class="form-check-input">
-                    <label for="admin" class="form-check-label text-info">Admin</label>
+                    <label for="admin" class=" h5 form-check-label text-dark">Admin</label>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 <input type="text" id="contactNum" class="form-control" formControlName="contactNum">
             </div>
 
-            <button type="submit" class="btn  d-block mx-auto">Register</button>
+            <button type="submit" class="btn h6 d-block mx-auto">Register</button>
         </form>
     </div>
 </div>
