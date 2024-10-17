@@ -23,12 +23,12 @@ const routes: Routes = [
   {
     path:'addMovie',
     component:AddMovieComponent,
-    canActivate:[authGuard]
+    // canActivate:[authGuard]
   },
   {
     path:'bookTicket/:moviename',
     component:BookTicketComponent,
-    canActivate:[authGuard]
+    // canActivate:[authGuard]
   },
   {
     path:'',

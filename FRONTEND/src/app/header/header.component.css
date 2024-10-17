@@ -1,24 +1,43 @@
-ul{
-    background-color:#29d4b7;
+ul {
+    background-color: #243336;
     margin-bottom: 10px;
-
-    
-}
-
-a:hover{
-    color:#29d4b7;
-    
-    background-color:black;
-    
-    
-}
-/* .nav-link:hover{
-    color: rgb(170, 46, 56);
-    
-} */
-
-a{
-    color:black;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  a {
+    color: white;
     font-size: medium;
     font-weight: bold;
-}
+    transition: transform 0.3s ease;
+  }
+  
+  .d-flex .nav-item a:hover {
+    transform: translateY(-3px); /* Moves the text up on hover */
+  }
+  
+  a:hover {
+    color: white; /* No hover effect on color */
+  }
+  
+  .d-flex .nav-item {
+    margin-right: 10px; /* 10px spacing between menu items */
+  }
+  
+  /* Styling for LOGIN button */
+  .nav-item .login-link {
+    background-color: #39847c; /* Turquoise color */
+    border-radius: 15px; /* Rounded rectangle */
+    padding: 5px 15px;
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
+  
+  .nav-item .login-link:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    transform: none; /* No text movement for LOGIN */
+  }
+  

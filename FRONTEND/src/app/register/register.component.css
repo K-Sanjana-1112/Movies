@@ -1,68 +1,71 @@
 .fluid-container {
     margin-top: 100px;
     margin-bottom: 100px;
-    padding: 40px 20px; /* Padding for the container */
-    border-radius: 8px; /* Rounded corners */
-    height: 700px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
 }
 
-.display-1 {
-    margin-bottom: 20px; /* Space below the title */
+.card {
+    background-color: white; /* White background inside container */
+    border: none; /* Removed border */
 }
 
-.text-danger {
-    font-size: 1.2rem; /* Slightly larger error message */
+.display-text {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 30px;
 }
 
 .form-label {
-    font-weight: 600; /* Bold labels */
-    
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .form-control {
-    border-radius: 4px; /* Rounded corners for inputs */
-    border-color: #29d4b7;
-    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
     transition: border-color 0.3s;
-    
-}
-
-.card{
-    margin-left: 460px;
-    border: #29d4b7 3px solid;
-    border-radius: 5px ;
-    box-shadow:0.0.0.3rem #1cb198;
 }
 
 .form-control:focus {
-    border-color: #29d4b7; /* Highlight border on focus */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.151); /* Focus shadow */
-}
-
-.text-dark {
-    margin-top: 5px; /* Space above warning messages */
+    border-color: #39847c;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(57, 132, 124, 0.25);
 }
 
 .btn-success {
-    background-color: #08866b; /* Button color */
-    border: none; /* Remove default border */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Button padding */
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth background transition */
+    background-color: #39847c; /* Updated button color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-button{
-    border-color: black;
-
+button:hover {
+    background-color: #1cb198;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-button:hover{
-    background-color: #29d4b7;
-    border-color: black;
+.toggle-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
+.toggle-btn.active {
+    background-color: #39847c;
+    color: white;
+}
 
+.toggle-btn:hover {
+    background-color: #1cb198;
+}
