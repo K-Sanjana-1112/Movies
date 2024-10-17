@@ -1,4 +1,4 @@
-@if(status===true){
+<!-- @if(status===true){
   @if(isUser){
     <div class="container">
       <p class="h3" > Hi {{user}}, Welcome to the world of Cinema</p>   
@@ -72,10 +72,43 @@
   </form>
   <button type="button" class="close-btn" (click)="closeForm()">Close</button>
   </div>
+</div> -->
+
+<div *ngIf="status === true">
+  <div *ngIf="isUser" class="container">
+    <p class="h3">Hi {{ user }}, Welcome to the world of Cinema</p>
+  </div>
 </div>
 
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3 pt-5" *ngFor="let movie of movies">
+    <div class="card" style="width: 18rem; margin: 5%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+      <img [src]="status === true ? movie.image : 'path/to/placeholder.jpg'" class="card-img-top" alt="Movie Image" style="height: 300px; object-fit: cover;" (click)="status === false ? login() : null">
+      <h5 class="card-title mt-2 text-center">{{ movie.movieName }}</h5>
+      <div class="button-container text-center mb-2">
+        <ng-container *ngIf="status === true">
+          <ng-container *ngIf="isUser; else guestButtons">
+            <button class="update-btn" (click)="openForm(movie.movieName)">Update Status</button>
+            <button class="dlt" (click)="deleteMovie(movie.movieName)">Delete</button>
+          </ng-container>
+          <ng-template #guestButtons>
+            <button class="my-2 book" (click)="bookTicket(movie.movieName)">Book Now</button>
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
 
-
- 
-
+<div class="popup" *ngIf="isPopupOpen">
+  <div class="popup-content">
+    <h3>Update Ticket Status</h3>
+    <form (ngSubmit)="update()">
+      <label class="form-label" for="num"><b>Number of Tickets</b></label>
+      <input id="num" type="number" class="form-control" [(ngModel)]="numOfTickets" required>
+      <button type="submit" class="submit-btn">Update</button>
+    </form>
+    <button type="button" class="close-btn" (click)="closeForm()">Close</button>
+  </div>
+</div>
 
