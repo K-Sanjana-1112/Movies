@@ -64,7 +64,7 @@ describe('AddMovieComponent', () => {
 
   it('should return the form control for image', () => {
     component.movie= new FormGroup({
-      image:new FormControl('res.png'),
+      image:new FormControl('res.jpg'),
       movieName:new FormControl('test movie'),
       theatreName:new FormControl('test'),
       totalSeats:new FormControl(100),
@@ -88,7 +88,7 @@ describe('AddMovieComponent', () => {
       theatreName:new FormControl('test'),
       totalSeats:new FormControl(100),
       price:new FormControl(15),
-      status:new FormControl("ava")
+      status:new FormControl("book asap")
     })
       spyOn(component.movieService, 'createMovie').and.returnValue(of({ message: 'Movie added Succesfully' }));
       spyOn(Swal, 'fire');

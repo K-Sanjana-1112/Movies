@@ -28,7 +28,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should initialize isUser based on user role', () => {
-    // Arrange
+    
     userServiceMock.getLoginType.and.returnValue(of('user'));
     userServiceMock.getUserLoginStatus.and.returnValue(of(true));
 
@@ -41,7 +41,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should handle error when getting login type', () => {
-    // Arrange
+    
     userServiceMock.getLoginType.and.returnValue(throwError('error'));
     userServiceMock.getUserLoginStatus.and.returnValue(of(true));
 

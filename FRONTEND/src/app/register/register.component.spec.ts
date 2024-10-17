@@ -48,7 +48,7 @@ describe('RegisterComponent', () => {
   });
 
   it('should create a user successfully', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'user',
       firstName: 'John',
@@ -66,13 +66,11 @@ describe('RegisterComponent', () => {
     // Act
     component.onSubmit();
 
-    // Assert
-   // expect(userServiceMock.createUser).toHaveBeenCalledWith(jasmine.any(User));
-   // expect(routerMock.navigate).toHaveBeenCalledWith(['/login']);
+    
   });
 
   it('should handle user creation failure', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'user',
       firstName: 'John',
@@ -95,7 +93,7 @@ describe('RegisterComponent', () => {
   });
 
   it('should create an admin successfully', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'admin',
       lastName: 'Admin',
@@ -110,13 +108,10 @@ describe('RegisterComponent', () => {
     // Act
     component.onSubmit();
 
-    // Assert
-    // expect(userServiceMock.createAdmin).toHaveBeenCalledWith(jasmine.any(Admin));
-    // expect(routerMock.navigate).toHaveBeenCalledWith(['/login']);
   });
 
   it('should handle admin creation failure', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'admin',
       lastName: 'Admin',
@@ -136,7 +131,7 @@ describe('RegisterComponent', () => {
   });
 
   it('should handle error during user creation', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'user',
       firstName: 'John',
@@ -150,15 +145,14 @@ describe('RegisterComponent', () => {
 
     userServiceMock.createUser.and.returnValue(throwError('Error occurred'));
 
-    // Act
+ 
     component.onSubmit();
 
-    // Assert
-    //expect(console.log).toHaveBeenCalledWith('error in user creation', 'Error occurred');
+    
   });
 
   it('should handle error during admin creation', () => {
-    // Arrange
+   
     component.registerForm = component.fb.group({
       registerType: 'admin',
       lastName: 'Admin',
