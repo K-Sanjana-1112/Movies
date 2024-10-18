@@ -30,10 +30,18 @@ ul {
   
   /* Styling for LOGIN button */
   .nav-item .login-link {
-    background-color: #39847c; /* Turquoise color */
+   
     border-radius: 15px; /* Rounded rectangle */
     padding: 5px 15px;
     transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
+
+  .nav-item:hover{
+    background-color: #39847c; /* Turquoise color */
+    color: white;
+    border-radius: 10px;
+
+
   }
   
   .nav-item .login-link:hover {

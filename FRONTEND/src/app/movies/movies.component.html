@@ -85,9 +85,10 @@
     <div class="card" style="width: 18rem; margin: 5%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
       <img [src]="status === true ? movie.image : 'path/to/placeholder.jpg'" class="card-img-top" alt="Movie Image" style="height: 300px; object-fit: cover;" (click)="status === false ? login() : null">
       <h5 class="card-title mt-2 text-center">{{ movie.movieName }}</h5>
+      
       <div class="button-container text-center mb-2">
         <ng-container *ngIf="status === true">
-          <ng-container *ngIf="isUser; else guestButtons">
+          <ng-container *ngIf="!isUser; else guestButtons">
             <button class="update-btn" (click)="openForm(movie.movieName)">Update Status</button>
             <button class="dlt" (click)="deleteMovie(movie.movieName)">Delete</button>
           </ng-container>
